@@ -1,0 +1,314 @@
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="1652748216740.png">
+
+    <title>AYOON VPN </title>
+
+    <style>
+
+        .center {
+
+            display: block;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+        .btn {
+
+            border-radius: 10px;
+
+            margin-bottom: 10px;
+
+            background-color:#1E90FF;
+
+            border: none;
+
+            color: white;
+
+            padding: 5px 5px;
+
+            cursor: pointer;
+
+            font-size: 20px;
+
+        }
+
+        /* Darker background on mouse-over */
+
+        .btn:hover {
+
+            background-color:#109c06;
+
+        }
+
+        #customers {
+
+            margin-bottom: 1%;
+
+            margin-top: 1%;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            border-collapse: collapse;
+
+            width: 100%;
+
+        }
+
+        #customers td,
+
+        #customers th {
+
+            border: 1px solid #ddd;
+
+            padding: 8px;
+
+        }
+
+        #customers tr:nth-child(even) {
+
+            background-color: #f2f2f2;
+
+        }
+
+        #customers tr:hover {
+
+            background-color: #ddd;
+
+        }
+
+        #customers th {
+
+            padding-top: 12px;
+
+            padding-bottom: 12px;
+
+            text-align: left;
+
+            background-color: #1E90FF;
+
+            color: white;
+
+        }
+
+        #snackbar {
+
+            visibility: hidden;
+
+            min-width: 250px;
+
+            margin-left: -125px;
+
+            background-color: #333;
+
+            color: #fff;
+
+            text-align: center;
+
+            border-radius: 2px;
+
+            padding: 16px;
+
+            position: fixed;
+
+            z-index: 1;
+
+            left: 50%;
+
+            bottom: 30px;
+
+            font-size: 17px;
+
+        }
+
+        #snackbar.show {
+
+            visibility: visible;
+
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+
+        }
+
+        @-webkit-keyframes fadein {
+
+            from {
+
+                bottom: 0;
+
+                opacity: 0;
+
+            }
+
+            to {
+
+                bottom: 30px;
+
+                opacity: 1;
+
+            }
+
+        }
+
+        @keyframes fadein {
+
+            from {
+
+                bottom: 0;
+
+                opacity: 0;
+
+            }
+
+            to {
+
+                bottom: 30px;
+
+                opacity: 1;
+
+            }
+
+        }
+
+        @-webkit-keyframes fadeout {
+
+            from {
+
+                bottom: 30px;
+
+                opacity: 1;
+
+            }
+
+            to {
+
+                bottom: 0;
+
+                opacity: 0;
+
+            }
+
+        }
+
+        @keyframes fadeout {
+
+            from {
+
+                bottom: 30px;
+
+                opacity: 1;
+
+            }
+
+            to {
+
+                bottom: 0;
+
+                opacity: 0;
+
+            }
+
+        }
+
+    </style>
+
+    <div class="center">
+
+        <img class="center" style="height: 100px;margin-top: 1%;" src="1652748216740.png">
+
+        <table id="customers">
+
+            <tbody><tr>
+
+                <th>Name</th>
+
+                <th>&nbsp;AYOON VPN </th>
+
+            </tr>
+
+            <tr>
+
+                <td>Version</td>
+
+                <td>1.0</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Size</td>
+
+                <td id="file-size">4.9 MB</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Updated on&nbsp;</td>
+
+                <td>May 14, 2022</td>
+
+            </tr>
+
+        </tbody></table>
+
+        <p style="text-align: center;color: red;"><br></p><p style="text-align: center;color: red;"><br></p>
+
+        <button class="btn" style="width:100%" onclick="direct('https://onedrive.live.com/download?cid=45EB10843CE6593C&resid=45EB10843CE6593C%21110&authkey=ABq9DUwLe9aMx5c');">Download (Direct)</button><button class="btn" style="width:100%" onclick="download('https://u.pcloud.link/publink/show?code=XZq75zVZiaeYhfWJGvX6Qu2IUoyjIY9HLk00');">Download (pCloud)</button>
+
+        <script>
+
+            function download(url) {
+
+                window.open(url,"_blank");
+
+            }
+
+            function direct(url) {
+
+                
+
+                var anchor = document.createElement('a');
+
+                anchor.setAttribute('href', url);
+
+                anchor.setAttribute('download', document.title);
+
+                anchor.style.display = 'none';
+
+                document.body.appendChild(anchor);
+
+                anchor.click();
+
+                document.body.removeChild(anchor);
+
+                showToast();
+
+            }
+
+            function showToast() {
+
+                var x = document.getElementById("snackbar");
+
+                x.className = "show";
+
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+
+            }
+
+            
+
+        </script>
+
+    </div>
+
+    <div id="snackbar">Downloading...</div>
+
